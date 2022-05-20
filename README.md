@@ -9,7 +9,8 @@ by: Paige Rackley
   </a>
 
 
-***
+  
+  
 [[Project Description](#project_description)]
 [[Project Planning](#planning)]
 [[Key Findings](#findings)]
