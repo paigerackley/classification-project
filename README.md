@@ -8,7 +8,6 @@ by: Paige Rackley
     <img alt="Paige" src="https://img.shields.io/github/followers/paigerackley?label=Follow_Paige&style=social" />
   </a>
 
-<p>
  * * *  
 [[Project Description](#project_description)]
 [[Project Planning](#planning)]
