@@ -100,9 +100,7 @@ ___
 ## <a name="explore"></a>Data Exploration:
 [[Back to top](#top)]
 - Python files used for exploration:
-    - wrangle.py 
-    - explore.py
-    - modeling.py
+
 
 
 ### Takeaways from exploration:
