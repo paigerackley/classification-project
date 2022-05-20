@@ -5,7 +5,7 @@ by: Paige Rackley
 
 <p>
   <a href="https://github.com/paigerackley" target="_blank">
-    <img alt="Matthew" src="https://img.shields.io/github/followers/paigerackley?label=Follow_Matt&style=social" />
+    <img alt="Paige" src="https://img.shields.io/github/followers/paigerackley?label=Follow_Matt&style=social" />
   </a>
 </p>
 
