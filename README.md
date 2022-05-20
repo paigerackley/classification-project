@@ -23,6 +23,14 @@ ___
 
 
 ## <a name="project_description"></a>Project Description:
+  > - Document code, process (data acquistion, preparation, exploratory data analysis and statistical testing, modeling, and model evaluation), findings, and key takeaways in a Jupyter Notebook Final Report.
+ 
+
+ 
+  
+  
+  
+  
 [[Back to top](#top)]
 
 ***
