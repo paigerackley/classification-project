@@ -31,27 +31,34 @@ ___
 [[Back to top](#top)]
 
 ***
-## <a name="planning"></a>Project Planning: 
-[[Back to top](#top)]
+## <a name="planning"></a>Project Planning:
+  
+  
+ ### Business Goals: 
+ > - Find drivers for customer churn at Telco. Why are customers churning?
+ > - Construct a ML classification model that accurately predicts customer churn.
+ > - Deliver a report that a non-data scientist can read through and understand.
 
-### Project Outline:
-
-
+ ### Audience:
+> - My target audience is for fellow Codeup Students and staff. 
         
-### Hypothesis
+  
+### Hypothesis:
 
 
 
 ### Target variable
 
 
-### Need to haves (Deliverables):
-
+### Deliverables:
+> - A final report notebook
+> - A final report notebook presentation
+> - All necessary modules to make my project reproducible
 
 
 ### Nice to haves (With more time):
 
-
+[[Back to top](#top)]
 
 ***
 
