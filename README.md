@@ -7,7 +7,6 @@ by: Paige Rackley
   <a href="https://github.com/paigerackley" target="_blank">
     <img alt="Paige" src="https://img.shields.io/github/followers/paigerackley?label=Follow_Paige&style=social" />
   </a>
-</p>
 
 
 ***
