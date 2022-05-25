@@ -1,7 +1,7 @@
-# <a name="top"></a>README TITLE
+# <center><a name="top"></a>Classification Project: Telco Churn 
 ![]()
 
-by: Paige Rackley
+by: Paige Rackley </center>
 
 <p>
   <a href="https://github.com/paigerackley" target="_blank">
