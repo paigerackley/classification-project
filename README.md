@@ -73,11 +73,6 @@ ___
 
 [[Back to top](#top)]
 
-**
-
-
-
-***
 
 ## <a name="dictionary"></a>Data Dictionary  
 [[Back to top](#top)]
@@ -140,7 +135,7 @@ We stratify on 'churn' since this is our main target
 
   
 ## <a name="explore"></a>Data Exploration:
-     ## Explore
+  ###  Explore
 - Finding which features have the highest correlation to churn
 - Testing hypothesis with Chi-Squared Tests
 - Visualizing churn with plots
@@ -150,12 +145,6 @@ We stratify on 'churn' since this is our main target
 
 ### Takeaways from exploration:
 The features tested all rejected the null, so they will be the focal points in the models. All other columns will be excluded to produce more precise results. 
-
-
-***
-
-
-***
 
 ## <a name="model"></a>Modeling:
   
