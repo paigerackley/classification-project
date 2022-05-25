@@ -1,5 +1,7 @@
-# <a name="top"></a>README TITLE
+# <a name="top"></a>Classification Project: Telco Churn
 ![]()
+
+<https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2F%40cogniata%2Fchurn-prediction-a-telco-example-9ad7bf36983d&psig=AOvVaw1_xlgktiLxkIBqgzSFs95I&ust=1653528333819000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJiDgZq_-fcCFQAAAAAdAAAAABAS>
 
 by: Paige Rackley
 
