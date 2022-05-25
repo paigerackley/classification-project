@@ -148,7 +148,6 @@ The features tested all rejected the null, so they will be the focal points in t
 
 ## <a name="model"></a>Modeling:
   
-## Model
 After splitting and exploring the data, we move on to modeling.  
 With the train data set, try four different classification models, determining which data features and model parameters create better predictions
 - Decision Tree
