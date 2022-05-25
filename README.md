@@ -42,12 +42,7 @@ ___
  ### Audience:
 > - My target audience is for fellow Codeup Students and staff. 
         
-  
-### Hypothesis:
-
-
-
-
+### Initial Hypothesis: Churn is most directly associated with 4 factors: Senior citizens, electronic checks, fiber optic internet, and tech support
 
 
 ### Deliverables:
@@ -58,7 +53,6 @@ ___
 
 ### Nice to haves (With more time):
 > - On your best model, a chart visualizing how it performed on test would be valuable.
-
 
 
 [[Back to top](#top)]
@@ -78,26 +72,35 @@ ___
 
 ### Data Used
   
-| Feature                   | Definition                            | Data Type                          |
-|---------------------------|---------------------------------------|------------------------------------|
-|senior_citizen             |senior or not senior                   |int - boolean                       |
-|part_depd                  |has partner, dependents, or both       |int - (0-2)                         |
-|phone_service              |one or multiple lines, or no service   |int - (0-2)                         |
-|internet_service_type      |DSL, fiber optic, or no service        |int - (0-2)                         |
-|online_security            |security or not                        |int - boolean                       |
-|online_backup              |backup or not                          |int - boolean                       |
-|device_protection          |protection or not                      |int - boolean                       |
-|tech_support               |support or not                         |int - boolean                       |
-|streaming (tv or movies)   |streaming or not                       |int - boolean                       |
-|contract_type              |monthy, 1 year, 2 year                 |int - (0-2)                         |
-|paperless_billing          |paperless or mailed bills              |int - boolean                       |
-|charges (monthly or total) |in USD $                               |float                               |
-|churn                      |customer has left the company or stayed|int - boolean                       |
-|tenure (months or years)   |length the customer has remained loyal |int for months, float for years     |
-|male                       |binary m/f                             |int - boolean, dummy var of gender  |
-|service type               |phone, internet, or both services      |int - (1-3)                         |
+Target|Datatype|Definition|
+|:-------|:--------|:----------|
+| churn | 7043 non-null: object | customer churn Yes or No |
 
-
+|Feature|Datatype|Definition|
+|:-------|:--------|:----------|
+| internet_service_type_id       | 7043 non-null: int64 |    id refering to type of internet service used |
+| payment_type_id        | 7043 non-null: int64 |    id refering to type of payment used |
+| contract_type_id       | 7043 non-null: int64 |    id refering to type of contract used |
+| customer_id        | 7043 non-null: object |    individual customer id string |
+| gender       | 7043 non-null: object |    customer male or female |
+| senior_citizen        | 7043 non-null: int64 |    is customer senior |
+| partner       | 7043 non-null: object |    does customer have a partner |
+| dependents        | 7043 non-null: object |    does customer have dependents |
+| tenure       | 7043 non-null: int64 |    length customer with company in months |
+| phone_service        | 7043 non-null: object |    uses phone service Yes or No |
+| multiple_lines       | 7043 non-null: object |    Yes, No, or No phone service |
+| online_security        | 7043 non-null: object |    Yes, No, No internet service |
+| online_backup       | 7043 non-null: object |    Yes, No, No internet service |
+| device_protection        | 7043 non-null: object |    Yes, No, No internet service |
+| tech_support       | 7043 non-null: object |    Yes, No, No internet service |
+| streaming_tv        | 7043 non-null: object |    Yes, No, No internet service |
+| streaming_movies       | 7043 non-null: object |    Yes, No, No internet service |
+| paperless_billing        | 7043 non-null: object |    uses paperless billing Yes or No |
+| monthly_charges       | 7043 non-null: float64 |    monthly bill amount in USD |
+| total_charges        | 7043 non-null: object |    lifetime total charged to customer in USD  |
+| contract_type       | 7043 non-null: object |    One Year, Two Year, Month-to-month |
+| payment_type        | 7043 non-null: object |    Electronic check, Mailed check, Bank transfer (automatic), Credit card (automatic)|
+| internet_service_type       | 7043 non-null: object |    Fiber optic, DSL, None |
 ***
 
 ## <a name="wrangle"></a>Data Acquisition and Preparation
