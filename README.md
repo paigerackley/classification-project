@@ -137,7 +137,6 @@ We stratify on 'churn' since this is our main target
   
 [[Back to top](#top)]
 
-![](
 
   
 ## <a name="explore"></a>Data Exploration:
