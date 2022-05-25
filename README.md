@@ -44,7 +44,24 @@ ___
         
 ### Initial Hypothesis: Churn is most directly associated with 4 factors: Senior citizens, electronic checks, fiber optic internet, and tech support
 
+## Hypothesis:
+  
+# Question1: Is churn associated with senior citizens?
+  - H0: Rate of churn is not dependent on being a senior citizen.
+  - H1: Rate of churn is dependent on being a senior citizen.
+  
+# Question2: Is churn associated with fiber optic internet?
+  - H0: Churn is not dependent on having fiber optic internet.
+  - H1: Churn is dependent on having fiber optic internet.
 
+# Question3: Is churn associated with customers who use electronic checks for payments?
+  - H0: Churn is not dependent on electronic check payment type.
+  - H1: Churn is dependent on electronic check payment type.
+ 
+# Question4: Is churn associated with those who don't receive tech support?
+  - H0: Churn is not dependent on if a customer receives tech support.
+  - H1: Churn is dependent on if a customer receives tech support.
+  
 ### Deliverables:
 > - A final report notebook
 > - A final report notebook presentation
