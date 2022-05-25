@@ -132,4 +132,10 @@ ___
 
 ## <a name="conclusion"></a>Conclusion:
 [[Back to top](#top)]
+  
+  
+  **How to Reproduce**
+- [x] Read this README.md
+- [ ] Download the aquire.py and prepare.py into your working directory
+- [ ] Have fun doing your own exploring, modeling, and more! 
 
