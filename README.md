@@ -11,11 +11,9 @@ by: Paige Rackley </center>
  * * *  
 [[Project Description](#project_description)]
 [[Project Planning](#planning)]
-[[Key Findings](#findings)]
 [[Data Dictionary](#dictionary)]
 [[Data Acquire and Prep](#wrangle)]
 [[Data Exploration](#explore)]
-[[Statistical Analysis](#stats)]
 [[Modeling](#model)]
 [[Conclusion](#conclusion)]
 ___
@@ -41,6 +39,16 @@ ___
 
  ### Audience:
 > - My target audience is for fellow Codeup Students and staff. 
+  
+  
+ ### Deliverables:
+> - A final report notebook
+> - A final report notebook presentation
+> - All necessary modules to make my project reproducible
+
+
+### Nice to haves (With more time):
+> - On your best model, a chart visualizing how it performed on test would be valuable.
         
 ### Initial Hypothesis: Churn is most directly associated with 4 factors: Senior citizens, electronic checks, fiber optic internet, and tech support
 
@@ -61,24 +69,11 @@ ___
 # Question4: Is churn associated with those who don't receive tech support?
   - H0: Churn is not dependent on if a customer receives tech support.
   - H1: Churn is dependent on if a customer receives tech support.
-  
-### Deliverables:
-> - A final report notebook
-> - A final report notebook presentation
-> - All necessary modules to make my project reproducible
-
-
-### Nice to haves (With more time):
-> - On your best model, a chart visualizing how it performed on test would be valuable.
 
 
 [[Back to top](#top)]
 
-***
-
-## <a name="findings"></a>Key Findings:
-[[Back to top](#top)]
-
+**
 
 
 
@@ -121,36 +116,83 @@ Target|Datatype|Definition|
 ***
 
 ## <a name="wrangle"></a>Data Acquisition and Preparation
+  
+ ## Acquire & Prepare
+### acquire.py
+Data is aquired from the company SQL database using MySQLWorkBench. Functions are stored in the acquire.py file, which allows quick access to the data. Once the aquire file is imported, it can be used each time using the data.
+### prepare.py
+Within the prepare.py file:
+Any duplicate observations are removed
+Convert the total charges column to a float value.
+Changed all columns that were binary to numeric.
+  - For example, columns that were either 'Yes/No to 1/0.
+Stored non-binary data in a 'dummies dataframe'
+Added the dummies dataframe to the original.
+Assigned more readable names to columns that needed it.
+Dropped duplicate columns.
+  - all '_id' categories (all of these are covered in different columns that can be encoded)
+Split the data into the 3 needed dataframes: train, validate, and test.
+We stratify on 'churn' since this is our main target
+
+  
 [[Back to top](#top)]
 
-![]()
-
-
+![](
 
   
 ## <a name="explore"></a>Data Exploration:
+     ## Explore
+- Finding which features have the highest correlation to churn
+- Testing hypothesis with Chi-Squared Tests
+- Visualizing churn with plots
+    - Using bar charts using matplotlib since these items have been encoded to categorical value
+ 
 [[Back to top](#top)]
-- Python files used for exploration:
-
-
 
 ### Takeaways from exploration:
+The features tested all rejected the null, so they will be the focal points in the models. All other columns will be excluded to produce more precise results. 
 
 
 ***
-
-## <a name="stats"></a>Statistical Analysis
-[[Back to top](#top)]
 
 
 ***
 
 ## <a name="model"></a>Modeling:
+  
+## Model
+After splitting and exploring the data, we move on to modeling.  
+With the train data set, try four different classification models, determining which data features and model parameters create better predictions
+- Decision Tree
+- Random Forest
+- KNN
+- Logistic Regression
+Evaluate the 3 top models on the validate data set
+Evaluate the best model on the test data set   
+  
+  
 [[Back to top](#top)]
 
 
 
 ## <a name="conclusion"></a>Conclusion:
+  
+ ### The factors that most affect churn can be solved in a number of ways. 
+#### Senior Citizens:
+1. Marketing to non senior citizens.
+2. Create marketing to keep senior citizens, such as discounts or promotional deals for staying.
+
+#### Fiber Optic:
+1. There could be potential issues with the fiber optic service, so performing an investigation would be insightful.
+
+#### Electronic Checks:
+1. Create incentives to switch to different payment types to potentially reduce churn.
+
+#### Tech Support:
+1. Increase tech support coverage and make tech support resources more available
+
+#### Next steps: explore the data to find more drivers of churn and use these to refine the model. 
+  
 [[Back to top](#top)]
   
   
