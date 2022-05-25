@@ -11,11 +11,9 @@ by: Paige Rackley </center>
  * * *  
 [[Project Description](#project_description)]
 [[Project Planning](#planning)]
-[[Key Findings](#findings)]
 [[Data Dictionary](#dictionary)]
 [[Data Acquire and Prep](#wrangle)]
 [[Data Exploration](#explore)]
-[[Statistical Analysis](#stats)]
 [[Modeling](#model)]
 [[Conclusion](#conclusion)]
 ___
@@ -41,30 +39,41 @@ ___
 
  ### Audience:
 > - My target audience is for fellow Codeup Students and staff. 
-        
   
-### Hypothesis:
-
-
-
-### Target variable
-
-
-### Deliverables:
+  
+ ### Deliverables:
 > - A final report notebook
 > - A final report notebook presentation
 > - All necessary modules to make my project reproducible
 
 
 ### Nice to haves (With more time):
+> - On your best model, a chart visualizing how it performed on test would be valuable.
+        
+### Initial Hypothesis: Churn is most directly associated with 4 factors: Senior citizens, electronic checks, fiber optic internet, and tech support
+
+## Hypothesis:
+  
+# Question1: Is churn associated with senior citizens?
+  - H0: Rate of churn is not dependent on being a senior citizen.
+  - H1: Rate of churn is dependent on being a senior citizen.
+  
+# Question2: Is churn associated with fiber optic internet?
+  - H0: Churn is not dependent on having fiber optic internet.
+  - H1: Churn is dependent on having fiber optic internet.
+
+# Question3: Is churn associated with customers who use electronic checks for payments?
+  - H0: Churn is not dependent on electronic check payment type.
+  - H1: Churn is dependent on electronic check payment type.
+ 
+# Question4: Is churn associated with those who don't receive tech support?
+  - H0: Churn is not dependent on if a customer receives tech support.
+  - H1: Churn is dependent on if a customer receives tech support.
+
 
 [[Back to top](#top)]
 
-***
-
-## <a name="findings"></a>Key Findings:
-[[Back to top](#top)]
-
+**
 
 
 
@@ -74,168 +83,121 @@ ___
 [[Back to top](#top)]
 
 ### Data Used
----
-| Attribute | Definition | Data Type |
-| ----- | ----- | ----- |
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
+  
+Target|Datatype|Definition|
+|:-------|:--------|:----------|
+| churn | 7043 non-null: object | customer churn Yes or No |
 
+|Feature|Datatype|Definition|
+|:-------|:--------|:----------|
+| internet_service_type_id       | 7043 non-null: int64 |    id refering to type of internet service used |
+| payment_type_id        | 7043 non-null: int64 |    id refering to type of payment used |
+| contract_type_id       | 7043 non-null: int64 |    id refering to type of contract used |
+| customer_id        | 7043 non-null: object |    individual customer id string |
+| gender       | 7043 non-null: object |    customer male or female |
+| senior_citizen        | 7043 non-null: int64 |    is customer senior |
+| partner       | 7043 non-null: object |    does customer have a partner |
+| dependents        | 7043 non-null: object |    does customer have dependents |
+| tenure       | 7043 non-null: int64 |    length customer with company in months |
+| phone_service        | 7043 non-null: object |    uses phone service Yes or No |
+| multiple_lines       | 7043 non-null: object |    Yes, No, or No phone service |
+| online_security        | 7043 non-null: object |    Yes, No, No internet service |
+| online_backup       | 7043 non-null: object |    Yes, No, No internet service |
+| device_protection        | 7043 non-null: object |    Yes, No, No internet service |
+| tech_support       | 7043 non-null: object |    Yes, No, No internet service |
+| streaming_tv        | 7043 non-null: object |    Yes, No, No internet service |
+| streaming_movies       | 7043 non-null: object |    Yes, No, No internet service |
+| paperless_billing        | 7043 non-null: object |    uses paperless billing Yes or No |
+| monthly_charges       | 7043 non-null: float64 |    monthly bill amount in USD |
+| total_charges        | 7043 non-null: object |    lifetime total charged to customer in USD  |
+| contract_type       | 7043 non-null: object |    One Year, Two Year, Month-to-month |
+| payment_type        | 7043 non-null: object |    Electronic check, Mailed check, Bank transfer (automatic), Credit card (automatic)|
+| internet_service_type       | 7043 non-null: object |    Fiber optic, DSL, None |
 ***
 
 ## <a name="wrangle"></a>Data Acquisition and Preparation
+  
+ ## Acquire & Prepare
+### acquire.py
+Data is aquired from the company SQL database using MySQLWorkBench. Functions are stored in the acquire.py file, which allows quick access to the data. Once the aquire file is imported, it can be used each time using the data.
+### prepare.py
+Within the prepare.py file:
+Any duplicate observations are removed
+Convert the total charges column to a float value.
+Changed all columns that were binary to numeric.
+  - For example, columns that were either 'Yes/No to 1/0.
+Stored non-binary data in a 'dummies dataframe'
+Added the dummies dataframe to the original.
+Assigned more readable names to columns that needed it.
+Dropped duplicate columns.
+  - all '_id' categories (all of these are covered in different columns that can be encoded)
+Split the data into the 3 needed dataframes: train, validate, and test.
+We stratify on 'churn' since this is our main target
+
+  
 [[Back to top](#top)]
 
-![]()
+![](
 
-
-### Wrangle steps: 
-
-
-*********************
-
+  
 ## <a name="explore"></a>Data Exploration:
+     ## Explore
+- Finding which features have the highest correlation to churn
+- Testing hypothesis with Chi-Squared Tests
+- Visualizing churn with plots
+    - Using bar charts using matplotlib since these items have been encoded to categorical value
+ 
 [[Back to top](#top)]
-- Python files used for exploration:
-
-
 
 ### Takeaways from exploration:
+The features tested all rejected the null, so they will be the focal points in the models. All other columns will be excluded to produce more precise results. 
 
 
 ***
 
-## <a name="stats"></a>Statistical Analysis
-[[Back to top](#top)]
-
-### Stats Test 1: ANOVA Test: One Way
-
-Analysis of variance, or ANOVA, is a statistical method that separates observed variance data into different components to use for additional tests. 
-
-A one-way ANOVA is used for three or more groups of data, to gain information about the relationship between the dependent and independent variables: in this case our clusters vs. the log_error, respectively.
-
-To run the ANOVA test in Python use the following import: \
-<span style="color:green">from</span> scipy.stats <span style="color:green">import</span> f_oneway
-
-- f_oneway, in this case, takes in the individual clusters and returns the f-statistic, f, and the p_value, p:
-    - the f-statistic is simply a ratio of two variances. 
-    - The p_vlaue is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct
-
-#### Hypothesis:
-- The null hypothesis (H<sub>0</sub>) is
-- The alternate hypothesis (H<sub>1</sub>) is 
-
-#### Confidence level and alpha value:
-- I established a 95% confidence level
-- alpha = 1 - confidence, therefore alpha is 0.05
-
-#### Results:
-
-
-#### Summary:
-
-
-### Stats Test 2: T-Test: One Sample, Two Tailed
-- A T-test allows me to compare a categorical and a continuous variable by comparing the mean of the continuous variable by subgroups based on the categorical variable
-- The t-test returns the t-statistic and the p-value:
-    - t-statistic: 
-        - Is the ratio of the departure of the estimated value of a parameter from its hypothesized value to its standard error. It is used in hypothesis testing via Student's t-test. 
-        - It is used in a t-test to determine if you should support or reject the null hypothesis
-        - t-statistic of 0 = H<sub>0</sub>
-    -  - the p-value:
-        - The probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct
-- We wanted to compare the individual clusters to the total population. 
-    - Cluster1 to the mean of ALL clusters
-    - Cluster2 to the mean of ALL clusters, etc.
-
-#### Hypothesis:
-- The null hypothesis (H<sub>0</sub>) is 
-- The alternate hypothesis (H<sub>1</sub>) is 
-
-#### Confidence level and alpha value:
-- I established a 95% confidence level
-- alpha = 1 - confidence, therefore alpha is 0.05
-
-
-#### Results:
-
-
-#### Summary:
 
 ***
 
 ## <a name="model"></a>Modeling:
+  
+## Model
+After splitting and exploring the data, we move on to modeling.  
+With the train data set, try four different classification models, determining which data features and model parameters create better predictions
+- Decision Tree
+- Random Forest
+- KNN
+- Logistic Regression
+Evaluate the 3 top models on the validate data set
+Evaluate the best model on the test data set   
+  
+  
 [[Back to top](#top)]
 
-### Model Preparation:
 
-### Baseline
-    
-- Baseline Results: 
-    
-
-- Selected features to input into models:
-    - features = []
-
-***
-
-### Models and R<sup>2</sup> Values:
-- Will run the following regression models:
-
-    
-
-- Other indicators of model performance with breif defiition and why it's important:
-
-    
-    
-#### Model 1: Linear Regression (OLS)
-
-
-- Model 1 results:
-
-
-
-### Model 2 : Lasso Lars Model
-
-
-- Model 2 results:
-
-
-### Model 3 : Tweedie Regressor (GLM)
-
-- Model 3 results:
-
-
-### Model 4: Quadratic Regression Model
-
-- Model 4 results:
-
-
-## Selecting the Best Model:
-
-### Use Table below as a template for all Modeling results for easy comparison:
-
-| Model | Validation/Out of Sample RMSE | R<sup>2</sup> Value |
-| ---- | ----| ---- |
-| Baseline | 0.167366 | 2.2204 x 10<sup>-16</sup> |
-| Linear Regression (OLS) | 0.166731 | 2.1433 x 10<sup>-3</sup> |  
-| Tweedie Regressor (GLM) | 0.155186 | 9.4673 x 10<sup>-4</sup>|  
-| Lasso Lars | 0.166731 | 2.2204 x 10<sup>-16</sup> |  
-| Quadratic Regression | 0.027786 | 2.4659 x 10<sup>-3</sup> |  
-
-
-- {} model performed the best
-
-
-## Testing the Model
-
-- Model Testing Results
-
-***
 
 ## <a name="conclusion"></a>Conclusion:
+  
+ ### The factors that most affect churn can be solved in a number of ways. 
+#### Senior Citizens:
+1. Marketing to non senior citizens.
+2. Create marketing to keep senior citizens, such as discounts or promotional deals for staying.
+
+#### Fiber Optic:
+1. There could be potential issues with the fiber optic service, so performing an investigation would be insightful.
+
+#### Electronic Checks:
+1. Create incentives to switch to different payment types to potentially reduce churn.
+
+#### Tech Support:
+1. Increase tech support coverage and make tech support resources more available
+
+#### Next steps: explore the data to find more drivers of churn and use these to refine the model. 
+  
 [[Back to top](#top)]
+  
+  
+  **How to Reproduce**
+- [x] Read this README.md
+- [ ] Download the aquire.py and prepare.py into your working directory
+- [ ] Have fun doing your own exploring, modeling, and more! 
 
