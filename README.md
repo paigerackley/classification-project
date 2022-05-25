@@ -21,12 +21,9 @@ ___
 
 
 ## <a name="project_description"></a>Project Description:
-  > - Document code, process (data acquistion, preparation, exploratory data analysis and statistical testing, modeling, and model evaluation), findings, and key takeaways in a Jupyter Notebook Final Report.
-  > - Create modules (acquire.py, prepare.py) that make my process repeateable and easy to follow.
-  > - Explore data that will help to understand the drivers of customers churning. Answer questions that arise using charts and statistical tests.
-  > - Construct a model to predict customer churn using classification techniques, and make predictions for a group of customers.
-  > - Refine work and processes into a Final Report that shows what work was done, my goals, what I found and my conclusions.
-[[Back to top](#top)]
+> . Create functions (acquire.py and prepare.py) that will bring in Telco database and clean it up in order to explore the data for churn.
+> . Run statistical tests to help understand drivers for churn.
+> . Contruct models using train,validate,test and make predictions for churn using classification methods.
 
 ***
 ## <a name="planning"></a>Project Planning:
