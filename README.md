@@ -1,5 +1,5 @@
 # <center><a name="top"></a>Classification Project: Telco Churn 
-![]()
+![](images/telco.jpeg)
 
 by: Paige Rackley </center>
 
