@@ -38,7 +38,7 @@ def get_telco_data():
     '''
     if os.path.isfile('telco.csv'):
         
-        # If csv file exists read in data from csv file.
+        # If csv file exists read in data from csv file
         df = pd.read_csv('telco.csv', index_col=0)
         
     else:

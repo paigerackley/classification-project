@@ -28,7 +28,7 @@ def prep_telco_data(df):
     # Convert to correct datatype
     df['total_charges'] = df.total_charges.astype(float)
     
-    # Convert binary categorical variables to numeric
+    # Convert binary variables to numeric
     df['gender_encoded'] = df.gender.map({'Female': 1, 'Male': 0})
     df['partner_encoded'] = df.partner.map({'Yes': 1, 'No': 0})
     df['dependents_encoded'] = df.dependents.map({'Yes': 1, 'No': 0})
@@ -36,7 +36,7 @@ def prep_telco_data(df):
     df['paperless_billing_encoded'] = df.paperless_billing.map({'Yes': 1, 'No': 0})
     df['churn_encoded'] = df.churn.map({'Yes': 1, 'No': 0})
     
-    # Get dummies for non-binary categorical variables
+    # Make dummies df for non-binary variables
     dummy_df = pd.get_dummies(df[['multiple_lines', \
                               'online_security', \
                               'online_backup', \
@@ -50,19 +50,17 @@ def prep_telco_data(df):
                               drop_first=True)
     
     
-    # Concatenate dummy dataframe to original 
+    # Concat dummy to original 
     df = pd.concat([df, dummy_df], axis=1)
     
     #readability
     df.rename(columns = {'internet_service_type_Fiber optic':'fiber_optic'}, inplace = True)
     df.rename(columns = {'payment_type_Electronic check':'electronic_check'}, inplace = True)
 
-    # Drop duplicate columns
-    # Also dropping columns that won't be of use in this case, aka numeric
-
+    # Drop duplicates
     df.drop(columns=['payment_type_id', 'internet_service_type_id', 'contract_type_id', 'customer_id'], inplace=True)
       
-    # split the data
+    # Split the data
     train, validate, test = split_telco_data(df)
     
     return train, validate, test
