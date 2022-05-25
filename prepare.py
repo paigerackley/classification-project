@@ -20,10 +20,7 @@ def split_telco_data(df):
     return train, validate, test
 
 def prep_telco_data(df):
-
-    # Drop duplicate columns
-    df.drop(columns=['payment_type_id', 'internet_service_type_id', 'contract_type_id', 'customer_id'], inplace=True)
-       
+        
     # Drop null values stored as whitespace    
     df['total_charges'] = df['total_charges'].str.strip()
     df = df[df.total_charges != '']
@@ -52,6 +49,7 @@ def prep_telco_data(df):
                               'payment_type']], dummy_na=False, \
                               drop_first=True)
     
+    
     # Concatenate dummy dataframe to original 
     df = pd.concat([df, dummy_df], axis=1)
     
@@ -59,6 +57,11 @@ def prep_telco_data(df):
     df.rename(columns = {'internet_service_type_Fiber optic':'fiber_optic'}, inplace = True)
     df.rename(columns = {'payment_type_Electronic check':'electronic_check'}, inplace = True)
 
+    # Drop duplicate columns
+    # Also dropping columns that won't be of use in this case, aka numeric
+
+    df.drop(columns=['payment_type_id', 'internet_service_type_id', 'contract_type_id', 'customer_id'], inplace=True)
+      
     # split the data
     train, validate, test = split_telco_data(df)
     
