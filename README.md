@@ -21,12 +21,9 @@ ___
 
 
 ## <a name="project_description"></a>Project Description:
-  > - Document code, process (data acquistion, preparation, exploratory data analysis and statistical testing, modeling, and model evaluation), findings, and key takeaways in a Jupyter Notebook Final Report.
-  > - Create modules (acquire.py, prepare.py) that make my process repeateable and easy to follow.
-  > - Explore data that will help to understand the drivers of customers churning. Answer questions that arise using charts and statistical tests.
-  > - Construct a model to predict customer churn using classification techniques, and make predictions for a group of customers.
-  > - Refine work and processes into a Final Report that shows what work was done, my goals, what I found and my conclusions.
-[[Back to top](#top)]
+> . Create functions (acquire.py and prepare.py) that will bring in Telco database and clean it up in order to explore the data for churn.
+> . Run statistical tests to help understand drivers for churn.
+> . Contruct models using train,validate,test and make predictions for churn using classification methods.
 
 ***
 ## <a name="planning"></a>Project Planning:
@@ -54,30 +51,25 @@ ___
 
 ## Hypothesis:
   
-# Question1: Is churn associated with senior citizens?
+# Question 1: Is churn associated with senior citizens?
   - H0: Rate of churn is not dependent on being a senior citizen.
   - H1: Rate of churn is dependent on being a senior citizen.
   
-# Question2: Is churn associated with fiber optic internet?
+# Question 2: Is churn associated with fiber optic internet?
   - H0: Churn is not dependent on having fiber optic internet.
   - H1: Churn is dependent on having fiber optic internet.
 
-# Question3: Is churn associated with customers who use electronic checks for payments?
+# Question 3: Is churn associated with customers who use electronic checks for payments?
   - H0: Churn is not dependent on electronic check payment type.
   - H1: Churn is dependent on electronic check payment type.
  
-# Question4: Is churn associated with those who don't receive tech support?
+# Question 4: Is churn associated with those who don't receive tech support?
   - H0: Churn is not dependent on if a customer receives tech support.
   - H1: Churn is dependent on if a customer receives tech support.
 
 
 [[Back to top](#top)]
 
-**
-
-
-
-***
 
 ## <a name="dictionary"></a>Data Dictionary  
 [[Back to top](#top)]
@@ -137,11 +129,10 @@ We stratify on 'churn' since this is our main target
   
 [[Back to top](#top)]
 
-![](
 
   
 ## <a name="explore"></a>Data Exploration:
-     ## Explore
+  ###  Explore
 - Finding which features have the highest correlation to churn
 - Testing hypothesis with Chi-Squared Tests
 - Visualizing churn with plots
@@ -152,15 +143,8 @@ We stratify on 'churn' since this is our main target
 ### Takeaways from exploration:
 The features tested all rejected the null, so they will be the focal points in the models. All other columns will be excluded to produce more precise results. 
 
-
-***
-
-
-***
-
 ## <a name="model"></a>Modeling:
   
-## Model
 After splitting and exploring the data, we move on to modeling.  
 With the train data set, try four different classification models, determining which data features and model parameters create better predictions
 - Decision Tree
@@ -177,7 +161,11 @@ Evaluate the best model on the test data set
 
 ## <a name="conclusion"></a>Conclusion:
   
- ### The factors that most affect churn can be solved in a number of ways. 
+ # Conclusion:
+
+### The factors that were explored and tested were proven to be associated with churn and not independent of churn.
+
+## Recomendations: 
 #### Senior Citizens:
 1. Marketing to non senior citizens.
 2. Create marketing to keep senior citizens, such as discounts or promotional deals for staying.
@@ -186,12 +174,14 @@ Evaluate the best model on the test data set
 1. There could be potential issues with the fiber optic service, so performing an investigation would be insightful.
 
 #### Electronic Checks:
-1. Create incentives to switch to different payment types to potentially reduce churn.
+1. Create incentives to switch to different payment types to potentially reduce churn
+    - Create promotions for switching payment types.
 
 #### Tech Support:
-1. Increase tech support coverage and make tech support resources more available
+1. Increase tech support coverage and make tech support resources more available.
+2. Prioritize making it easier to get to tech support on website.
 
-#### Next steps: explore the data to find more drivers of churn and use these to refine the model. 
+#### Next steps: With more time, I would like to investigate the issue with Fiber Optic even more. Fiber optic is usually the faster internet option, so the reason for churn could be connectivity issues. 
   
 [[Back to top](#top)]
   
