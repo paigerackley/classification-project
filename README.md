@@ -161,7 +161,11 @@ Evaluate the best model on the test data set
 
 ## <a name="conclusion"></a>Conclusion:
   
- ### The factors that most affect churn can be solved in a number of ways. 
+ # Conclusion:
+
+### The factors that were explored and tested were proven to be associated with churn and not independent of churn.
+
+## Recomendations: 
 #### Senior Citizens:
 1. Marketing to non senior citizens.
 2. Create marketing to keep senior citizens, such as discounts or promotional deals for staying.
@@ -170,12 +174,14 @@ Evaluate the best model on the test data set
 1. There could be potential issues with the fiber optic service, so performing an investigation would be insightful.
 
 #### Electronic Checks:
-1. Create incentives to switch to different payment types to potentially reduce churn.
+1. Create incentives to switch to different payment types to potentially reduce churn
+    - Create promotions for switching payment types.
 
 #### Tech Support:
-1. Increase tech support coverage and make tech support resources more available
+1. Increase tech support coverage and make tech support resources more available.
+2. Prioritize making it easier to get to tech support on website.
 
-#### Next steps: explore the data to find more drivers of churn and use these to refine the model. 
+#### Next steps: With more time, I would like to investigate the issue with Fiber Optic even more. Fiber optic is usually the faster internet option, so the reason for churn could be connectivity issues. 
   
 [[Back to top](#top)]
   
